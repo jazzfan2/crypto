@@ -7,7 +7,7 @@ crypto.sh finds all the possible words that fit the known or unknown cryptogram-
 	/usr/share/dict/dutch
 	/usr/share/dict/british-english
 
-If wished, above paths may be modified or references to additional word lists may be added, by modifying the program code accordingly.
+If wished, above paths may be modified or removed and references to other word lists may be added, by modifying the program code accordingly.
 
 # How to use crypto.sh:
 After starting the program by typing the following command on the command line:
