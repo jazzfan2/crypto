@@ -28,11 +28,11 @@ For instance, typing the query:
 	pepper
 	poplar
 
-To start a new query, type
+To start a new query, type:
 
 	q
 
-To abort inputting a query, type:
+To abort inputting a query and stop the program, type:
 
 	<Ctrl-C>
 
