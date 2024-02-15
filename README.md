@@ -1,16 +1,18 @@
 # Name: crypto.sh
-crypto.sh - A program that proposes solutions for cryptogram- or crosswords.
+crypto.sh - A program that proposes solutions for cryptogram- or crosswords problems.
 
 # Description:
-crypto.sh finds all the possible cryptogram- or crosswords words possible that fit the known or unknown characters given.
+crypto.sh finds all the possible words possible that fit the known or unknown cryptogram- or crosswords characters given.
 
 # How to use crypto.sh:
 Type the content of each cryptogram- or crosswords cell in the right order: a letter character if known, or otherwise a dot ('.') if a cell is still empty.
 
 For instance the query:
+
 	p.p..r
 
 ... renders following solutions:
+
 	papier
 	pipser
 	popper
