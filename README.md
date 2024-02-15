@@ -14,7 +14,7 @@ After starting the program by typing following command on the command line:
 
 	crypto.sh
 
-you get are prompted to type the content of each cryptogram- or crosswords cell in the right order: a letter character if known, or otherwise a dot ('.') if a cell is still empty.
+you are prompted to type the content of each cryptogram- or crosswords cell in the right order: a letter character if known, or otherwise a dot ('.') if a cell is still empty.
 
 For instance, typing the query:
 
@@ -23,15 +23,17 @@ For instance, typing the query:
 ... renders following possible solutions:
 
 	papier
-	pipser
-	popper
-	pepper
+	 pipser
+	  popper
+	 pepper
 	poplar
 
 To start a new query, type
+
 	q
 
 To abort inputting a query, type:
+
 	<Ctrl-C>
 
 # Author:
