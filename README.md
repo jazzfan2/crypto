@@ -14,7 +14,7 @@ After starting the program by typing the following command on the command line:
 
 	crypto.sh
 
-you are prompted to type the content of each cryptogram- or crosswords cell in the right order: a letter character if known, or otherwise a dot ('.') if a cell is still empty.
+.. you are prompted to type the content of each cryptogram- or crosswords cell in the right order: a letter character if known, or otherwise a dot ('.') if a cell is still empty.
 
 For instance, typing the query:
 
