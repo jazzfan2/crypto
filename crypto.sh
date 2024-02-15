@@ -2,8 +2,11 @@
 # Name   : crypto.sh
 # Author : Rob Toscani
 # Date   : aug 2014
-# Description: This script finds all the possible cryptogram- or crosswords words possible that fit the known or unknown characters given.
-# Perequisite is presence on the system of Dutch and British-English word lists in flat text format.
+# Description: crypto.sh is an interactive program that proposes solutions for
+# cryptogram- or crosswords problems. It finds all the possible words that fit
+# the known or unknown cryptogram- or crosswords characters given.
+# Perequisite is presence on the system of Dutch and British-English word lists
+# in flat text format.
 #
 ##############################################################################
 #
