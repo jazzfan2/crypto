@@ -2,7 +2,7 @@
 crypto.sh - An interactive program that proposes solutions for cryptogram- or crosswords problems.
 
 # Description:
-crypto.sh finds all the possible words that fit the known or unknown cryptogram- or crosswords characters given. Perequisite is presence on the system at the following locations of Dutch and British-English word lists in flat text format:
+crypto.sh finds all the possible words that fit the known and unknown cryptogram- or crosswords characters given. Perequisite is presence on the system at the following locations of Dutch and British-English word lists in flat text format:
 
 	/usr/share/dict/dutch
 	/usr/share/dict/british-english

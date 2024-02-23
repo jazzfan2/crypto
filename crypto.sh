@@ -4,7 +4,7 @@
 # Date   : aug 2014
 # Description: crypto.sh is an interactive program that proposes solutions for
 # cryptogram- or crosswords problems. It finds all the possible words that fit
-# the known or unknown cryptogram- or crosswords characters given.
+# the known and unknown cryptogram- or crosswords characters given.
 # Perequisite is presence on the system of Dutch and British-English word lists
 # in flat text format.
 #
