@@ -28,11 +28,11 @@ For instance, typing the query:
 	pepper
 	poplar
 
-To stop the program after a receiving a query result, type:
+To stop the program after a query result, type:
 
 	q
 
-To continue for a new query, type character(s). 
+To continue for a new query, type any character(s). 
 
 To abort while already in input mode, type:
 
