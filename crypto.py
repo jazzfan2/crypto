@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Name   : crypto2.py
+# Name   : crypto.py
 # Author : Rob Toscani
 # Date   : 08-04-2024
 # Description: crypto.py is an interactive program that proposes solutions for
