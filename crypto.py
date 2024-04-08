@@ -92,5 +92,4 @@ while True:
     reply = input("\nquit ('q<rtn>') or continue (any other input)? ")
     if reply == "q":
         break
-    else:
-        continue
+    continue
