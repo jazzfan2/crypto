@@ -52,10 +52,7 @@ Just a moment please,
 preparing database ...
 """)
 
-
-
 time.sleep(1)
-
 
 # Regular expressions:
 dot     = re.compile('\.')
