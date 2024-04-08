@@ -30,7 +30,7 @@ For instance, typing the query:
 
 To stop the program after a query result, type:
 
-	q
+	q <Enter>
 
 To continue for a new query, type:
 
