@@ -66,16 +66,21 @@ for language in language_files:
     with open(language,'r') as f:
         wordlist += [ij_low.sub('_', ij_upp.sub('=', x)) for x in f.read().splitlines()]
 
+instruction = """
+Type content of each cell in the right order: a letter character if known,
+or otherwise a \".\" if a cell is still empty (type <Ctrl-C> to abort)\n
+"""
+
 while True:
     os.system('clear')
     while True:
-        word = input("Type content of each cell in the right order: a letter character if known,\nor otherwise a \".\" if a cell is still empty (type <Ctrl-C> to abort)\n")   
+        word = input(instruction)   
         if word == "":
             os.system('clear')
             print ("\n\a\a\aPlease provide input...\a\a\a\n")
             continue
         break
-    print("For " + word + ", the following solutions are possible:\n")
+    print("\nFor " + word + ", the following solutions are possible:\n")
 
     dotsub = dot.sub('[_=0-9a-zA-Z]', word)
     regex = re.compile('^' + dotsub + '$')
