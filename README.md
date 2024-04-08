@@ -32,7 +32,9 @@ To stop the program after a query result, type:
 
 	q
 
-To continue for a new query, type any character(s). 
+To continue for a new query, type:
+
+    <Enter>
 
 To abort while already in input mode, type:
 
