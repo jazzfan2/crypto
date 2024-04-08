@@ -1,8 +1,8 @@
-# Name: crypto.sh
+# Name: crypto.py
 crypto.sh - An interactive program that proposes solutions for cryptogram- or crosswords problems.
 
 # Description:
-crypto.sh finds all the possible words that fit the known and unknown cryptogram- or crosswords characters given. Perequisite is presence on the system at the following locations of Dutch and British-English word lists in flat text format:
+crypto.py finds all the possible words that fit the known and unknown cryptogram- or crosswords characters given. Perequisite is presence on the system at the following locations of Dutch and British-English word lists in flat text format:
 
 	/usr/share/dict/dutch
 	/usr/share/dict/british-english
@@ -12,7 +12,7 @@ If wished, above paths may be modified or removed and references to other word l
 # How to use crypto.sh:
 After starting the program by typing the following command on the command line:
 
-	crypto.sh
+	crypto.py
 
 .. you are prompted to type the content of each cryptogram- or crosswords cell in the right order: a letter character if known, or otherwise a dot ('.') if a cell is still empty.
 
@@ -28,11 +28,13 @@ For instance, typing the query:
 	pepper
 	poplar
 
-To start a new query, type:
+To stop the program after a receiving a query result, type:
 
 	q
 
-To abort inputting a query and stop the program, type:
+To continue for a new query, type character(s). 
+
+To abort while already in input mode, type:
 
 	<Ctrl-C>
 
