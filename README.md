@@ -28,13 +28,13 @@ For instance, typing the query:
 	pepper
 	poplar
 
-To stop the program after a query result, type:
-
-	q <Enter>
-
 To continue for a new query, type:
 
     <Enter>
+
+To stop the program after a query result, type:
+
+	q <Enter>
 
 To abort while already in input mode, type:
 
