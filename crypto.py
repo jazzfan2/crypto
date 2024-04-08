@@ -76,7 +76,6 @@ while True:
             continue
         break
     print("For " + word + ", the following solutions are possible:\n")
-    time.sleep(2)
 
     dotsub = dot.sub('[_=0-9a-zA-Z]', word)
     regex = re.compile('^' + dotsub + '$')
