@@ -1,5 +1,5 @@
 # Name: crypto.py
-crypto.sh - An interactive program that proposes solutions for cryptogram- or crosswords problems.
+crypto.py - An interactive program that proposes solutions for cryptogram- or crosswords problems.
 
 # Description:
 crypto.py finds all the possible words that fit the known and unknown cryptogram- or crosswords characters given. Perequisite is presence on the system at the following locations of Dutch and British-English word lists in flat text format:
