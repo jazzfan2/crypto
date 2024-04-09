@@ -29,7 +29,6 @@
 #
 import sys
 import time
-import getopt
 import os
 import re
 
