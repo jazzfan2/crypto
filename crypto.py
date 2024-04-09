@@ -37,6 +37,7 @@ dutch          = "/usr/share/dict/dutch"
 english        = "/usr/share/dict/british-english"
 db_size        = "full"
 language_files = [dutch, english ]
+word_arg       = 0
 
 # Text printed if -h option (help) or a non-existing option has been given:
 usage = """
@@ -99,9 +100,16 @@ Type content of each cell in the right order: a letter character if known,
 or otherwise a \".\" if a cell is still empty (type <Ctrl-C> to abort)\n
 """
 
+if non_option_args:
+    word_arg = 1
+
 while True:
     os.system('clear')
     while True:
+        if word_arg:
+            word = non_option_args[0]
+            word_arg = 0
+            break
         word = input(instruction)   
         if word == "":
             os.system('clear')
