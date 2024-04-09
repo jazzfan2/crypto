@@ -54,7 +54,11 @@ or otherwise a \".\" if a cell is still empty (type <Ctrl-C> to abort)\n
 while True:
     os.system('clear')
     while True:
-        word = input(instruction)   
+        try:
+            word = input(instruction)
+        except:
+            os.system('clear')
+            sys.exit()
         if word == "":
             os.system('clear')
             print ("\n\a\a\aPlease provide input...\a\a\a\n")
@@ -69,7 +73,11 @@ while True:
     results = [x.replace('_', 'ij').replace('=', 'IJ') for x in matchlist]
     for result in results:
         print(result)
-    reply = input("\nQuit ('q<rtn>') or continue (any other input)? ")
+    try:
+        reply = input("\nQuit ('q<rtn>') or continue (any other input)? ")
+    except:
+        os.system('clear')
+        sys.exit()
     if reply == "q":
         break
     continue
