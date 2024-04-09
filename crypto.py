@@ -10,23 +10,6 @@
 #
 ##############################################################################
 #
-# Copyright (C) 2024 Rob Toscani <rob_toscani@yahoo.com>
-#
-# crypto.py is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# crypto.py is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
-#
 import sys
 import time
 import os
@@ -34,7 +17,6 @@ import re
 
 dutch          = "/usr/share/dict/dutch"
 english        = "/usr/share/dict/british-english"
-language_files = [dutch, english ]
 
 os.system('clear')
 
@@ -56,18 +38,11 @@ preparing database ...
 
 time.sleep(1)
 
-# Regular expressions:
-dot     = re.compile('\.')
-ij_low  = re.compile('ij')
-ij_upp  = re.compile('IJ')
-undersc = re.compile('_')
-equal   = re.compile('=')
-
 wordlist = []
-for language in language_files:
+for language in [dutch, english]:
     with open(language,'r') as f:
         if language == dutch:
-            wordlist += [ij_low.sub('_', ij_upp.sub('=', x)) for x in f.read().splitlines()]
+            wordlist += [x.replace('ij', '_').replace('IJ', '=') for x in f.read().splitlines()]
         else:
             wordlist += [x for x in f.read().splitlines()]
 
@@ -87,11 +62,11 @@ while True:
         break
     print("\nFor " + word + ", the following solutions are possible:\n")
 
-    dotsub = dot.sub('[_=0-9a-zA-Z]', word)
-    regex = re.compile('^' + dotsub + '$')
+    dotword = word.replace('.', '[_=0-9a-zA-Z]')
+    regex = re.compile('^' + dotword + '$')
 
     matchlist = list(filter(regex.match, wordlist))
-    results = [undersc.sub('ij', equal.sub('IJ', x)) for x in matchlist]
+    results = [x.replace('_', 'ij').replace('=', 'IJ') for x in matchlist]
     for result in results:
         print(result)
     reply = input("\nQuit ('q<rtn>') or continue (any other input)? ")
