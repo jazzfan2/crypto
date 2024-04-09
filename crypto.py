@@ -29,13 +29,35 @@
 #
 import sys
 import time
+import getopt
 import os
 import re
 
-dutch   = "/usr/share/dict/dutch"
-english = "/usr/share/dict/british-english"
-
+dutch          = "/usr/share/dict/dutch"
+english        = "/usr/share/dict/british-english"
+db_size        = "full"
 language_files = [dutch, english ]
+
+# Text printed if -h option (help) or a non-existing option has been given:
+usage = """
+Usage:
+crypto.py [-hr]
+\t-h	Help (this output)
+\t-r	Use reduced database (Dutch only)
+"""
+
+try:
+    options, non_option_args = getopt.getopt(sys.argv[1:], 'hr')
+except:
+    print(usage)
+    sys.exit()
+
+for opt, arg in options:
+    if opt in ('-h'):
+        print(usage)
+        sys.exit()
+    elif opt in ('-r'):
+        db_size = "reduced"
 
 os.system('clear')
 
@@ -69,7 +91,7 @@ for language in language_files:
     with open(language,'r') as f:
         if language == dutch:
             wordlist += [ij_low.sub('_', ij_upp.sub('=', x)) for x in f.read().splitlines()]
-        else:
+        elif db_size == "full":
             wordlist += [x for x in f.read().splitlines()]
 
 instruction = """
