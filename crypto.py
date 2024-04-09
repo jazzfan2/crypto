@@ -32,7 +32,10 @@ import time
 import os
 import re
 
-language_files = ["/usr/share/dict/dutch", "/usr/share/dict/british-english" ]
+dutch   = "/usr/share/dict/dutch"
+english = "/usr/share/dict/british-english"
+
+language_files = [dutch, english ]
 
 os.system('clear')
 
@@ -64,7 +67,10 @@ equal   = re.compile('=')
 wordlist = []
 for language in language_files:
     with open(language,'r') as f:
-        wordlist += [ij_low.sub('_', ij_upp.sub('=', x)) for x in f.read().splitlines()]
+        if language == dutch:
+            wordlist += [ij_low.sub('_', ij_upp.sub('=', x)) for x in f.read().splitlines()]
+        else:
+            wordlist += [x for x in f.read().splitlines()]
 
 instruction = """
 Type content of each cell in the right order: a letter character if known,
