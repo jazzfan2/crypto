@@ -83,7 +83,8 @@ while True:
         break
     print("\nFor " + word + ", the following solutions are possible:\n")
 
-    dotword = word.replace('.', '[_=0-9a-zA-ZáàäâåÁÀÄÂéèëêÉÈËÊïíìÏÍÌóòöôøÓÒÖÔüûÜÛñÑçÇ]')
+#   dotword = word.replace('.', '[_=0-9a-zA-ZáàäâåÁÀÄÂéèëêÉÈËÊïíìÏÍÌóòöôøÓÒÖÔüûÜÛñÑçÇ]')
+    dotword = word.replace('.', '(_|=|\w)')
     regex = re.compile('^' + dotword + '$')
 
     matchlist = list(filter(regex.match, wordlist))
