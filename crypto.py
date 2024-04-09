@@ -95,7 +95,7 @@ while True:
     results = [undersc.sub('ij', equal.sub('IJ', x)) for x in matchlist]
     for result in results:
         print(result)
-    reply = input("\nquit ('q<rtn>') or continue (any other input)? ")
+    reply = input("\nQuit ('q<rtn>') or continue (any other input)? ")
     if reply == "q":
         break
     continue
