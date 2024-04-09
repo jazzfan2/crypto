@@ -35,30 +35,7 @@ import re
 
 dutch          = "/usr/share/dict/dutch"
 english        = "/usr/share/dict/british-english"
-db_size        = "full"
 language_files = [dutch, english ]
-word_arg       = 0
-
-# Text printed if -h option (help) or a non-existing option has been given:
-usage = """
-Usage:
-crypto.py [-hr]
-\t-h	Help (this output)
-\t-r	Use reduced database (Dutch only)
-"""
-
-try:
-    options, non_option_args = getopt.getopt(sys.argv[1:], 'hr')
-except:
-    print(usage)
-    sys.exit()
-
-for opt, arg in options:
-    if opt in ('-h'):
-        print(usage)
-        sys.exit()
-    elif opt in ('-r'):
-        db_size = "reduced"
 
 os.system('clear')
 
@@ -92,7 +69,7 @@ for language in language_files:
     with open(language,'r') as f:
         if language == dutch:
             wordlist += [ij_low.sub('_', ij_upp.sub('=', x)) for x in f.read().splitlines()]
-        elif db_size == "full":
+        else:
             wordlist += [x for x in f.read().splitlines()]
 
 instruction = """
@@ -100,16 +77,9 @@ Type content of each cell in the right order: a letter character if known,
 or otherwise a \".\" if a cell is still empty (type <Ctrl-C> to abort)\n
 """
 
-if non_option_args:
-    word_arg = 1
-
 while True:
     os.system('clear')
     while True:
-        if word_arg:
-            word = non_option_args[0]
-            word_arg = 0
-            break
         word = input(instruction)   
         if word == "":
             os.system('clear')
