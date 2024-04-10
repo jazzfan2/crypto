@@ -9,7 +9,7 @@ crypto.py finds all the possible words that fit the known and unknown cryptogram
 
 If wished, above paths may be modified or removed and references to other word lists may be added, by modifying the program code accordingly.
 
-# How to use crypto.sh:
+# How to use crypto.py:
 After starting the program by typing the following command on the command line:
 
 	crypto.py
