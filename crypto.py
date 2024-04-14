@@ -63,6 +63,9 @@ for language in [dutch, english]:
         else:
             wordlist += [x for x in f.read().splitlines()]
 
+wordlist = [x.replace('.', '').replace('-', '').replace(' ', '').replace('\'', '') for x in wordlist]
+
+
 instruction = """
 Type content of each cell in the right order: a letter character if known,
 or otherwise a \".\" if a cell is still empty (type <Ctrl-C> to abort)\n
