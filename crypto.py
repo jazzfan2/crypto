@@ -56,7 +56,7 @@ preparing database ...
 time.sleep(1)
 
 wordlist = [ [], [] ]
-for language in [dutch, english]:
+for language in (dutch, english):
     with open(language,'r') as f:
         if language == dutch:
             wordlist[0] = [x.replace('ij', '_').replace('IJ', '=') for x in f.read().splitlines()]
