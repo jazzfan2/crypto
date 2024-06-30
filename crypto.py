@@ -88,6 +88,8 @@ while True:
 
 #   dotword = word.replace('.', '[_=0-9a-zA-ZáàäâåÁÀÄÂéèëêÉÈËÊïíìÏÍÌóòöôøÓÒÖÔüûÜÛñÑçÇ]')
     dotword = word.replace('.', '(_|=|\w)')
+    dotword = dotword.replace('ij', '_')
+    dotword = dotword.replace('IJ', '=')
     regex = re.compile('^' + dotword + '$')
 
     matchlist = list(filter(regex.match, wordlist))
