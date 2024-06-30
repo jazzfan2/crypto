@@ -98,7 +98,7 @@ while True:
     dotword = word.replace('.', '\w')
     regex_en = re.compile('^' + dotword + '$')
 
-    for language in [dutch, english]:
+    for language in (dutch, english):
         if language == dutch:
             matchlist = [x.replace('_', 'ij').replace('=', 'IJ') \
                         for x in list(filter(regex_nl.match, wordlist[0]))]
