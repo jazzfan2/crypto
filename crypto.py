@@ -55,16 +55,16 @@ preparing database ...
 
 time.sleep(1)
 
-wordlist = []
+wordlist = [ [], [] ]
 for language in [dutch, english]:
     with open(language,'r') as f:
         if language == dutch:
-            wordlist += [x.replace('ij', '_').replace('IJ', '=') for x in f.read().splitlines()]
+            wordlist[0] = [x.replace('ij', '_').replace('IJ', '=') for x in f.read().splitlines()]
         else:
-            wordlist += [x for x in f.read().splitlines()]
-
-wordlist = [x.replace('.', '').replace('-', '').replace(' ', '').replace('\'', '') for x in wordlist]
-
+            wordlist[1] = [x for x in f.read().splitlines()]
+for i in (0,1):
+    wordlist[i] = [x.replace('.', '').replace('-', '').replace(' ', '').replace('\'', '') \
+                   for x in wordlist[i]]
 
 instruction = """
 Type content of each cell in the right order: a letter character if known,
@@ -86,16 +86,29 @@ while True:
         break
     print("\nFor " + word + ", the following solutions are possible:\n")
 
-#   dotword = word.replace('.', '[_=0-9a-zA-ZáàäâåÁÀÄÂéèëêÉÈËÊïíìÏÍÌóòöôøÓÒÖÔüûÜÛñÑçÇ]')
+
+    # Dutch:
+    # dotword = word.replace('.', '[_=0-9a-zA-ZáàäâåÁÀÄÂéèëêÉÈËÊïíìÏÍÌóòöôøÓÒÖÔüûÜÛñÑçÇ]')
     dotword = word.replace('.', '(_|=|\w)')
     dotword = dotword.replace('ij', '_')
     dotword = dotword.replace('IJ', '=')
-    regex = re.compile('^' + dotword + '$')
+    regex_nl = re.compile('^' + dotword + '$')
 
-    matchlist = list(filter(regex.match, wordlist))
-    results = [x.replace('_', 'ij').replace('=', 'IJ') for x in matchlist]
-    for result in results:
-        print(result)
+    # English:
+    dotword = word.replace('.', '\w')
+    regex_en = re.compile('^' + dotword + '$')
+
+    for language in [dutch, english]:
+        if language == dutch:
+            matchlist = [x.replace('_', 'ij').replace('=', 'IJ') \
+                        for x in list(filter(regex_nl.match, wordlist[0]))]
+        else:
+            matchlist = list(filter(regex_en.match, wordlist[1]))
+
+        for result in matchlist:
+            print(result)
+        print()
+
     try:
         reply = input("\nQuit ('q<rtn>') or continue (any other input)? ")
     except:

@@ -23,6 +23,7 @@ For instance, typing the query:
 ... renders following possible solutions:
 
 	papier
+
 	pipser
 	popper
 	pepper
