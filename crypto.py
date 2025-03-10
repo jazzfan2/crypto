@@ -92,11 +92,11 @@ while True:
     dotword = word.replace('.', '(_|=|\w)')
     dotword = dotword.replace('ij', '_')
     dotword = dotword.replace('IJ', '=')
-    regex_nl = re.compile('^' + dotword + '$')
+    regex_nl = re.compile('^' + dotword + '$', re.IGNORECASE)
 
     # English:
     dotword = word.replace('.', '\w')
-    regex_en = re.compile('^' + dotword + '$')
+    regex_en = re.compile('^' + dotword + '$', re.IGNORECASE)
 
     for language in (dutch, english):
         if language == dutch:
