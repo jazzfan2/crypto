@@ -90,6 +90,11 @@ while True:
     # Dutch:
     # dotword = word.replace('.', '[_=0-9a-zA-ZáàäâåÁÀÄÂéèëêÉÈËÊïíìÏÍÌóòöôøÓÒÖÔüûÜÛñÑçÇ]')
     dotword = word.replace('.', '(_|=|\w)')
+    dotword = dotword.replace('e', '[eéèëêÉÈËÊ]')
+    dotword = dotword.replace('a', '[aáàäâåÁÀÄÂ]')
+    dotword = dotword.replace('i', '[iïíìÏÍÌ]')
+    dotword = dotword.replace('o', '[oóòöôøÓÒÖÔ]')
+    dotword = dotword.replace('u', '[uüûÜÛ]')
     dotword = dotword.replace('ij', '_')
     dotword = dotword.replace('IJ', '=')
     regex_nl = re.compile('^' + dotword + '$', re.IGNORECASE)
