@@ -90,14 +90,17 @@ while True:
     # Dutch:
     # dotword = word.replace('.', '[_=0-9a-zA-ZáàäâåÁÀÄÂéèëêÉÈËÊïíìÏÍÌóòöôøÓÒÖÔüûÜÛñÑçÇ]')
     dotword = word.replace('.', '(_|=|\w)')
+    dotword = dotword.replace('ij', '_')
+    dotword = dotword.replace('IJ', '=')
     dotword = dotword.replace('e', '[eéèëêÉÈËÊ]')
     dotword = dotword.replace('a', '[aáàäâåÁÀÄÂ]')
     dotword = dotword.replace('i', '[iïíìÏÍÌ]')
     dotword = dotword.replace('o', '[oóòöôøÓÒÖÔ]')
     dotword = dotword.replace('u', '[uüûÜÛ]')
-    dotword = dotword.replace('ij', '_')
-    dotword = dotword.replace('IJ', '=')
     regex_nl = re.compile('^' + dotword + '$', re.IGNORECASE)
+
+    print(dotword)
+
 
     # English:
     dotword = word.replace('.', '\w')
@@ -105,6 +108,7 @@ while True:
 
     for language in (dutch, english):
         if language == dutch:
+            print(list(filter(regex_nl.match, wordlist[0])))
             matchlist = [x.replace('_', 'ij').replace('=', 'IJ') \
                         for x in list(filter(regex_nl.match, wordlist[0]))]
         else:
