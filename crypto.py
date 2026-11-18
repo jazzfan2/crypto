@@ -84,7 +84,7 @@ while True:
             print ("\n\a\a\aPlease provide input...\a\a\a\n")
             continue
         break
-#   print("\nFor " + word + ", the following solutions are possible:\n")
+    print("\nFor " + word + ", the following solutions are possible:\n")
 
 
     # Dutch:
