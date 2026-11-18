@@ -84,7 +84,7 @@ while True:
             print ("\n\a\a\aPlease provide input...\a\a\a\n")
             continue
         break
-    print("\nFor " + word + ", the following solutions are possible:\n")
+#   print("\nFor " + word + ", the following solutions are possible:\n")
 
 
     # Dutch:
@@ -99,7 +99,7 @@ while True:
     dotword = dotword.replace('u', '[uüûÜÛ]')
     regex_nl = re.compile('^' + dotword + '$', re.IGNORECASE)
 
-    print(dotword)
+#   print(dotword)
 
 
     # English:
@@ -108,7 +108,7 @@ while True:
 
     for language in (dutch, english):
         if language == dutch:
-            print(list(filter(regex_nl.match, wordlist[0])))
+#           print(list(filter(regex_nl.match, wordlist[0])))
             matchlist = [x.replace('_', 'ij').replace('=', 'IJ') \
                         for x in list(filter(regex_nl.match, wordlist[0]))]
         else:
