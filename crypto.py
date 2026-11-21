@@ -88,7 +88,7 @@ while True:
 
 
     # Dutch:
-    # dotword = word.replace('.', '[_=0-9a-zA-ZáàäâåÁÀÄÂéèëêÉÈËÊïíìÏÍÌóòöôøÓÒÖÔØüûÜÛñÑçÇ]')
+    # dotword = word.replace('.', '[_=0-9a-zA-ZáàäâåÁÀÄÂÅéèëêÉÈËÊïíìÏÍÌóòöôøÓÒÖÔØüûÜÛñÑçÇ]')
     dotword = word.replace('.', '(_|=|\w)')
     dotword = dotword.replace('ij', '_')
     dotword = dotword.replace('IJ', '=')
