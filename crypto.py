@@ -6,7 +6,7 @@
 # cryptogram- or crosswords problems. It finds all the possible words that fit
 # the known and unknown cryptogram- or crosswords characters given.
 # Prerequisite is presence on the system of Dutch and British-English word lists
-# in flat text format.
+# in plain text format.
 #
 ##############################################################################
 #
@@ -88,14 +88,15 @@ while True:
 
 
     # Dutch:
-    # dotword = word.replace('.', '[_=0-9a-zA-ZáàäâåÁÀÄÂéèëêÉÈËÊïíìÏÍÌóòöôøÓÒÖÔüûÜÛñÑçÇ]')
+    # dotword = word.replace('.', '[_=0-9a-zA-ZáàäâåÁÀÄÂéèëêÉÈËÊïíìÏÍÌóòöôøÓÒÖÔØüûÜÛñÑçÇ]')
     dotword = word.replace('.', '(_|=|\w)')
     dotword = dotword.replace('ij', '_')
     dotword = dotword.replace('IJ', '=')
+    dotword = dotword.replace('c', '[çÇ]')
     dotword = dotword.replace('e', '[eéèëêÉÈËÊ]')
-    dotword = dotword.replace('a', '[aáàäâåÁÀÄÂ]')
+    dotword = dotword.replace('a', '[aáàäâåÁÀÄÂÅ]')
     dotword = dotword.replace('i', '[iïíìÏÍÌ]')
-    dotword = dotword.replace('o', '[oóòöôøÓÒÖÔ]')
+    dotword = dotword.replace('o', '[oóòöôøÓÒÖÔØ]')
     dotword = dotword.replace('u', '[uüûÜÛ]')
     regex_nl = re.compile('^' + dotword + '$', re.IGNORECASE)
 
