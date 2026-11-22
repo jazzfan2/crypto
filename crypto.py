@@ -92,7 +92,7 @@ while True:
     dotword = word.replace('.', '(_|=|\w)')
     dotword = dotword.replace('ij', '_')
     dotword = dotword.replace('IJ', '=')
-    dotword = dotword.replace('c', '[çÇ]')
+    dotword = dotword.replace('c', '[cçCÇ]')
     dotword = dotword.replace('e', '[eéèëêÉÈËÊ]')
     dotword = dotword.replace('a', '[aáàäâåÁÀÄÂÅ]')
     dotword = dotword.replace('i', '[iïíìÏÍÌ]')
